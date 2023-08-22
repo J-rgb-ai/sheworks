@@ -19,6 +19,7 @@ void handle_format(char **format, va_list args, int *count)
 	if(**format == 'c')
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		case 'c':{
 				char c = va_arg(args, int);
 
@@ -41,6 +42,9 @@ void handle_format(char **format, va_list args, int *count)
 				(*count) += 1 + handle_unknown(**format);
 				break;
 			}
+=======
+		*count = print_char(args, *count);
+>>>>>>> 9994e99e729e9a5b0e14f69520db1ab6fc137cba
 =======
 		*count = print_char(args, *count);
 >>>>>>> 9994e99e729e9a5b0e14f69520db1ab6fc137cba
