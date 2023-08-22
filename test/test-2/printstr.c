@@ -9,7 +9,9 @@ int print_str(va_list args, int count)
 {
 	int cj;
 	char *string = va_arg(args, char *);
-
+	
+	if (string == NULL)
+		return (-1);
 	for (cj = 0; string[cj] != '\0'; cj++)
 	{
 		if (string[cj] == 0)

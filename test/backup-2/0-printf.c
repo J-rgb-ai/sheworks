@@ -38,11 +38,6 @@ int _printf(char *format, ...)
 			{
 				count = print_str(args, count);
 			}
-			else
-			{
-				_putchar(format[id + 1]);
-				count += 2; 
-			}
 			id++;
 		}
 		else
