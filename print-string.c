@@ -2,7 +2,7 @@
 /**
  * print_string - prints a string
  * @str: string to be output
- * Return: always 0 success
+ * Return: void
  */
 void print_string(char *str)
 {
