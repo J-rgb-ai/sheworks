@@ -13,5 +13,5 @@ int print_string(char *str)
 		print_char(*str);
 		str++;
 	}
-	return (0);
+	return (1);
 }
