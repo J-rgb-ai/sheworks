@@ -37,8 +37,7 @@ void handle_format(char **format, va_list args, int *count)
 			}
 		default:{
 				print_char('%');
-				handle_unknown(**format);
-				(*count) += 2;
+				*count += 1 + handle_unknown(**format);
 				break;
 			}
 	}
