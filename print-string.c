@@ -7,7 +7,7 @@
 int print_string(char *str)
 {
 	if (str == NULL)
-		return (-1);
+		str = "null";
 	while (*str != '\0')
 	{
 		print_char(*str);
