@@ -8,6 +8,7 @@ int handle_unknown(char c)
 {
 	if (c == ' ')
 		return (-1);
+	print_char('%');
 	print_char(c);
 	return (1);
 }
