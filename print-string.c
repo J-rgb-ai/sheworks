@@ -6,7 +6,7 @@
  */
 int print_string(char *str)
 {
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL)
 		return (-1);
 	while (*str != '\0')
 	{

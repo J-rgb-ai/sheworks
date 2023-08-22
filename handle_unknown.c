@@ -6,7 +6,7 @@
  */
 int handle_unknown(char c)
 {
-	if (c == '\0' || c == ' ')
+	if (c == NULL || c == ' ')
 		return (-1);
 	return (print_char(c));
 }
