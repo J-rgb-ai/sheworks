@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdarg.h>
 
 int _printf(char *format, ...);
 void print_char(char c);

@@ -7,7 +7,7 @@
  * @count: pointer to character count
  * Return: void
  */
-void handle_format(char **format, val_list args, int *count)
+void handle_format(char **format, va_list args, int *count)
 {
 	(*format)++;
 	if (**format == '\0')
@@ -16,7 +16,7 @@ void handle_format(char **format, val_list args, int *count)
 		(*count)++;
 		return;
 	}
-	switch (*format)
+	switch (**format)
 	{
 		case 'c':{
 				char c = va_arg(args, int);
