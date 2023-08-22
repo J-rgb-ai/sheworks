@@ -28,7 +28,7 @@ void handle_format(char **format, va_list args, int *count)
 		case 's':{
 				char *str = va_arg(args, char *);
 
-				print_string(str);
+				print-string(str);
 				while (*str != '\0')
 				{
 					str++;

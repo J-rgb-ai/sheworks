@@ -2,15 +2,16 @@
 /**
  * print_string - prints a string
  * @str: string to be output
- * Return: void
+ * Return: always 0 success
  */
-void print_string(char *str)
+int print_string(char *str)
 {
-	if (str == NULL || str[0] == '\0')
-		return;
+	if (str == NULL)
+		return (-1);
 	while (*str != '\0')
 	{
 		print_char(*str);
 		str++;
 	}
+	return (0);
 }
