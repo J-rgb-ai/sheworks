@@ -29,7 +29,6 @@ void handle_format(char **format, va_list args, int *count)
 				char *str = va_arg(args, char *);
 
 				print_string(str);
-				if (str == NULL) return -1;
 				while (*str != '\0')
 				{
 					str++;
