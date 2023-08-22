@@ -14,30 +14,31 @@ void handle_format(char **format, va_list args, int *count)
 	{
 		print_char('%');
 		(*count)++;
-		return;
+		break;
 	}
 	switch (**format)
 	{
 		case 'c':{
 				char c = va_arg(args, int);
 
-				(*count) += print_char(c);
+				print_char(c);
+				(*count)++;
 				break;
 			}
 		case 's':{
 				char *str = va_arg(args, char *);
 
-				if (str == NULL)
-				str = "null";
+				print_string(str);
 				while (*str != '\0')
 				{
 					str++;
-					*count += print_char(*str);
+					(*count)++;
 				}
 				break;
 			}
 		case '%':{
-				*count += print_char('%');
+				print_char('%');
+				(*count)++;
 				break;
 			}
 		default:{
