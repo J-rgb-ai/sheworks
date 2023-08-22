@@ -14,7 +14,7 @@ void handle_format(char **format, va_list args, int *count)
 	{
 		print_char('%');
 		(*count)++;
-		break;
+		return;
 	}
 	switch (**format)
 	{
