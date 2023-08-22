@@ -21,18 +21,19 @@ void handle_format(char **format, va_list args, int *count)
 		case 'c':{
 				char c = va_arg(args, int);
 
-				print_char(c);
-				(*count)++;
+				(*count) += print_char(c);
 				break;
 			}
 		case 's':{
 				char *str = va_arg(args, char *);
 
-				print_string(str);
-				while (*str != '\0')
+				if (*str)
 				{
-					str++;
-					(*count)++;
+					while (*str)
+					{
+						*count += print_char(*str);
+						str++;
+					}
 				}
 				break;
 			}
