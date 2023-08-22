@@ -6,9 +6,12 @@
  */
 void print_string(char *str)
 {
-	while (*str != '\0')
+	if (str != NULL)
 	{
-		print_char(*str);
-		str++;
+		while (*str != '\0')
+		{
+			print_char(*str);
+			str++;
+		}
 	}
 }
