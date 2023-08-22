@@ -4,13 +4,14 @@
  * @str: string to be output
  * Return: void
  */
-void print_string(char *str)
+int print_string(char *str)
 {
 	if (str == NULL)
-		return;
+		return (-1);
 	while (*str != '\0')
 	{
 		print_char(*str);
 		str++;
 	}
+	return (0);
 }
