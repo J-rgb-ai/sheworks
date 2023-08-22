@@ -27,7 +27,7 @@ void handle_format(char **format, va_list args, int *count)
 		case 's':{
 				char *str = va_arg(args, char *);
 
-				if (*str)
+				if (str != NULL)
 				{
 					while (*str)
 					{
