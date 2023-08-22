@@ -10,7 +10,7 @@ void print_string(char *str)
 		return;
 	while (*str != '\0')
 	{
-		print_char(*str);
+		_putchar(*str);
 		str++;
 	}
 }

@@ -12,40 +12,12 @@ void handle_format(char **format, va_list args, int *count)
 	(*format)++;
 	if (**format == '\0')
 	{
-		print_char('%');
+		_putchar('%');
 		(*count)++;
 		return;
 	}
-	switch (**format)
+	if(**format == 'c')
 	{
-		case 'c':{
-				char c = va_arg(args, int);
-
-				print_char(c);
-				(*count)++;
-				break;
-			}
-		case 's':{
-				char *str = va_arg(args, char *);
-
-				print_string(str);
-				while (*str)
-				{
-					str++;
-					(*count)++;
-				}
-				break;
-			}
-		case '%':{
-				print_char('%');
-				(*count)++;
-				break;
-			}
-		default:{
-				print_char('%');
-				handle_unknown(**format);
-				(*count) += 2;
-				break;
-			}
+		*count = print_char(args, *count);
 	}
 }

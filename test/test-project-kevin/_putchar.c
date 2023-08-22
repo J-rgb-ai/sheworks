@@ -5,7 +5,7 @@
  * @c: character to be output
  * Return: void
  */
-int print_char(char c)
+int _putchar(char c)
 {
-	return (write(STDOUT_FILENO, &c, 1));
+	return (write(1, &c, 1));
 }

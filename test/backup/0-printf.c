@@ -22,7 +22,7 @@ int _printf(char *format, ...)
 		}
 		else
 		{
-			_putchar(*format);
+			print_char(*format);
 			count++;
 		}
 		format++;
