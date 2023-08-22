@@ -18,6 +18,7 @@ void handle_format(char **format, va_list args, int *count)
 	}
 	switch (**format)
 	{
+		int unknown_result;
 		case 'c':{
 				char c = va_arg(args, int);
 
@@ -37,6 +38,9 @@ void handle_format(char **format, va_list args, int *count)
 			}
 		default:{
 				print_char('%');
+				unknown_result = handle_unknown(**format);
+				if (unknown_result == -1)
+					return;
 				*count += 1 + handle_unknown(**format);
 				break;
 			}
