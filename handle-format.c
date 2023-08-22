@@ -27,14 +27,7 @@ void handle_format(char **format, va_list args, int *count)
 		case 's':{
 				char *str = va_arg(args, char *);
 
-				if (str != NULL)
-				{
-					while (*str)
-					{
-						*count += print_char(*str);
-						str++;
-					}
-				}
+				count += handle_string(str);
 				break;
 			}
 		case '%':{
@@ -44,8 +37,7 @@ void handle_format(char **format, va_list args, int *count)
 			}
 		default:{
 				print_char('%');
-				print_char(**format);
-				(*count) += 2;
+				(*count) += 1 + handle_unknown(**format);
 				break;
 			}
 	}
